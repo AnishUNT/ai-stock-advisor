@@ -5,9 +5,6 @@ import yfinance as yf
 import pandas as pd
 from typing import Optional, Dict, List, Any
 from datetime import datetime, timedelta
-from crewai.tools import tool
-
-
 def is_valid_ticker(ticker: str) -> bool:
     """Validate if a ticker symbol exists and has data."""
     try:
@@ -240,32 +237,3 @@ def format_news_for_context(news_items: List[Dict[str, str]]) -> str:
     return formatted
 
 
-# CrewAI Tool wrappers
-@tool
-def analyze_stock_data(ticker: str, horizon: str) -> str:
-    """
-    Analyze stock price data and technical indicators.
-    
-    Args:
-        ticker: Stock ticker symbol (e.g., 'AAPL', 'NVDA')
-        horizon: Investment horizon - either 'short-term' or 'long-term'
-    
-    Returns:
-        Comprehensive stock analysis summary
-    """
-    return summarize_stock_trend(ticker, horizon)
-
-
-@tool
-def get_stock_news(ticker: str) -> str:
-    """
-    Get recent news articles about a stock.
-    
-    Args:
-        ticker: Stock ticker symbol (e.g., 'AAPL', 'NVDA')
-    
-    Returns:
-        Formatted list of recent news articles with links
-    """
-    news = fetch_stock_news(ticker)
-    return format_news_for_context(news)
