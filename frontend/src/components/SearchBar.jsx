@@ -18,10 +18,10 @@ export default function SearchBar({ onAnalyze, loading }) {
   }
 
   return (
-    <div className="card p-6 space-y-5">
+    <div className="card p-10 space-y-7">
       {/* Title */}
-      <div className="text-center space-y-1">
-        <h1 className="text-3xl sm:text-4xl font-mono font-bold gradient-text">
+      <div className="text-center space-y-2">
+        <h1 className="text-4xl sm:text-5xl font-mono font-bold gradient-text">
           AI Stock Advisor
         </h1>
         <p className="text-slate-400 text-sm">
@@ -94,7 +94,7 @@ export default function SearchBar({ onAnalyze, loading }) {
       </div>
 
       {/* Info pills */}
-      <div className="flex flex-wrap gap-3 justify-center pt-1">
+      <div className="flex flex-wrap gap-3 justify-center pt-2">
         {[
           ['🤖', '2 AI Agents'],
           ['📊', 'Real-time Data'],
